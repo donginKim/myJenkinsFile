@@ -14,7 +14,7 @@ pipeline{
 						passwordVariable: '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'
 					)
 				]) {
-					sh 'git clone https://github.com/donginKim/spring-music.git'
+					sh 'git clone https://github.com/donginKim/spring-music.git && cd spring-music'
 				}
 			}
 		}
