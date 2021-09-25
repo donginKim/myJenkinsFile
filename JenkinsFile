@@ -23,6 +23,11 @@ pipeline{
 				sh 'ls -al'
 			}
 		}
+		stage('End Build') {
+			steps {
+				sh 'cd ../ && rm -rf spring-music'
+			}
+		}
 
 	}
 	
