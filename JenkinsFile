@@ -1,11 +1,30 @@
-pipeline{   
-	agent any
-	stages {
-		stage('Example') {
-			steps {
-				echo 'Hello World'
-			}
+pipeline{
+	agent {
+		node {
+			label 'master'
 		}
 	}
+	stages {
+		stage('Git Progress') {
+			steps {
+				withCredentials([
+					usernamePassword(
+						credentialsId: 'steve1145@naver.com', 
+						usernameVariable: 'steve1145@naver.com', 
+						passwordVariable: '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'
+					)
+				]) {
+					sh 'git clone https://github.com/donginKim/spring-music.git'
+				}
+			}
+		}
+		stage('Gradle Build') {
+			steps {
+				sh 'ls -al'
+			}
+		}
+
+	}
+	
 
 }
