@@ -9,7 +9,7 @@ pipeline{
 			steps {
 				withCredentials([
 					usernamePassword(
-						credentialsId: 'steve1145', 
+						credentialsId: 'github-credentials', 
 						usernameVariable: 'steve1145@naver.com', 
 						passwordVariable: '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'
 					)
