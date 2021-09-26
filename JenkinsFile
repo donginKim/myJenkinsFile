@@ -20,7 +20,7 @@ pipeline{
 		}
 		stage('Gradle Build') {
 			steps {
-				sh 'gradle clean build'
+				sh 'gradle build'
 				sh 'ls -al'
 				sh 'cd out'
 			}
