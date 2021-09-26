@@ -20,12 +20,13 @@ pipeline{
 		}
 		stage('Gradle Build') {
 			steps {
+				sh 'gradle clean build'
 				sh 'ls -al'
+				sh 'cd out'
 			}
 		}
 		stage('End Build') {
 			steps {
-				sh 'cd ../ && ls -al'
 				sh 'rm -rf spring-music'
 			}
 		}
